@@ -171,9 +171,9 @@
   }
 
 
-  .info-box p {
-    padding-left: 0 !important;
-    max-width: none !important;
+.info-box p {
+    padding-left: 15px;
+    max-width: none;
   }
 
 

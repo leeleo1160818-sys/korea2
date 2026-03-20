@@ -1,20 +1,20 @@
 
 
-$(function(){
+$(function () {
 
   const header = $("header");
 
   /* gnb hover */
-  $(".gnb").mouseenter(function(){
+  $(".gnb").mouseenter(function () {
     header.addClass("on");
   });
 
-  header.mouseleave(function(){
+  header.mouseleave(function () {
     header.removeClass("on");
   });
 
   /* language */
-$(".lang > a").click(function (e) {
+  $(".lang > a").click(function (e) {
     e.preventDefault();
     $(".lang").toggleClass("active");
 
@@ -23,15 +23,15 @@ $(".lang > a").click(function (e) {
 });
 
 /* 탭메뉴 이동 */
-$(window).on("load", function(){
+$(window).on("load", function () {
 
-  const hash = window.location.hash.replace("#","");
+  const hash = window.location.hash.replace("#", "");
 
-  if(hash){
+  if (hash) {
 
     const target = $(`.tab li[data-filter="${hash}"]`);
 
-    if(target.length){
+    if (target.length) {
       target.click();
     }
   }
@@ -39,15 +39,15 @@ $(window).on("load", function(){
 
 
 // 같은 페이지에서 hash 변경될 때
-$(window).on("hashchange", function(){
+$(window).on("hashchange", function () {
 
-  const hash = window.location.hash.replace("#","");
+  const hash = window.location.hash.replace("#", "");
 
-  if(hash){
+  if (hash) {
 
     const target = $(`.tab li[data-filter="${hash}"]`);
 
-    if(target.length){
+    if (target.length) {
       target.click();
     }
   }
@@ -60,21 +60,21 @@ const buttons = document.querySelectorAll(".color button[data-theme]");
 // 저장된 테마 불러오기
 const savedTheme = localStorage.getItem("theme");
 
-if(savedTheme){
+if (savedTheme) {
   document.body.classList.add(savedTheme);
-}else{
+} else {
   document.body.classList.add("light");
 }
 
 // 테마 버튼 클릭
-buttons.forEach(button=>{
-  button.addEventListener("click",()=>{
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
     const theme = button.dataset.theme;
 
-    document.body.classList.remove("light","dark","mix");
+    document.body.classList.remove("light", "dark", "mix");
     document.body.classList.add(theme);
 
-    localStorage.setItem("theme",theme);
+    localStorage.setItem("theme", theme);
   });
 });
 
@@ -88,27 +88,27 @@ const bgmButton = document.querySelector(".bgm-btn");
 let savedBgm = localStorage.getItem("bgm");
 let savedTime = localStorage.getItem("bgmTime");
 
-if(savedTime){
+if (savedTime) {
   bgm.currentTime = savedTime;
 }
 
-if(savedBgm === "on"){
-  bgm.play().catch(()=>{});
+if (savedBgm === "on") {
+  bgm.play().catch(() => { });
 }
 
-bgm.addEventListener("timeupdate", ()=>{
+bgm.addEventListener("timeupdate", () => {
   localStorage.setItem("bgmTime", bgm.currentTime);
 });
 
 // BGM 버튼
-bgmButton.addEventListener("click", ()=>{
+bgmButton.addEventListener("click", () => {
 
-  if(bgm.paused){
+  if (bgm.paused) {
     bgm.play();
-    localStorage.setItem("bgm","on");
-  }else{
+    localStorage.setItem("bgm", "on");
+  } else {
     bgm.pause();
-    localStorage.setItem("bgm","off");
+    localStorage.setItem("bgm", "off");
   }
 
 });
@@ -123,16 +123,9 @@ if (mobileMenuBtn && gnb) {
     gnb.classList.toggle("active");
     document.body.classList.toggle("modal-open");
   });
-
-  mobileDim.addEventListener("click", () => {
-    gnb.classList.remove("active");
-    mobileDim.classList.remove("active");
-    document.body.classList.remove("modal-open");
-    gnbItems.forEach((item) => item.classList.remove("active"));
-  });
 }
 
-gnbItems.forEach((item) => {
+/* gnbItems.forEach((item) => {
   const link = item.querySelector(":scope > a");
   const depth = item.querySelector(".depth");
 
@@ -144,5 +137,5 @@ gnbItems.forEach((item) => {
       }
     });
   }
-});
+}); */
 

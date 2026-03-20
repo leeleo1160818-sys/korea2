@@ -495,7 +495,7 @@
 }
 
 /* ===== 모바일 ==== */
-@media screen and (max-width: 393px) {
+@media screen and (max-width: 430px) {
 
  * {
   box-sizing: border-box;

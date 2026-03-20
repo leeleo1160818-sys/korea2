@@ -112,7 +112,6 @@ body.mix {
 
 /* mix */
 .color button[data-theme="mix"] {
-  /* background: #eebdbd; */
   background: linear-gradient(#dce650, #eebc8d);
 }
 
@@ -364,16 +363,6 @@ html {
 .btn-top i:hover {
   background: #7a5f3b;
 }
-
-/* .dark .btn-top i {
-  background: #fff;
-  color: #2c2c2c;
-  transition: all 0.3s;
-}
-
-.dark .btn-top i:hover {
-  background: #ecd7c4;;
-} */
 
 @media screen and (max-width: 430px) {
   html,
