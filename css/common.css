@@ -101,7 +101,7 @@ body.mix {
 
 /* white */
 .color button[data-theme="light"] {
-  background: url(../img/bg.png);
+  background: url(../img/bg-white.png);
 }
 
 /* black */
@@ -502,10 +502,6 @@ html {
     align-items: center;
     justify-content: center;
     padding: 0;
-  }
-
-  body.dark .mobile-menu {
-    color: #fff;
   }
 
   /* mobile gnb drawer */

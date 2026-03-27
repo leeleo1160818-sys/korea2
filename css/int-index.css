@@ -501,7 +501,10 @@
   .hero {
     text-align: center;
     margin-top: 60px;
+     padding-top: 0px;
   }
+
+
 
   .hero h1 {
     font-size: 32px;
@@ -556,6 +559,9 @@
     row-gap: 15px;
   }
 
+    .data-grid .data-item {
+        font-size: 15px;
+    }
   .taeguk-mark {
     display: none;
   }
